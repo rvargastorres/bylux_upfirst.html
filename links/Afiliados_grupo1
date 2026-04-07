@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Academy - Enlaces Oficiales</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; background-color: #f9f9f9; }
+        .container { max-width: 400px; margin: auto; }
+        .link-button {
+            display: block;
+            background-color: #6200ee; /* Color de tu marca */
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .link-button:hover { background-color: #3700b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Master Academy</h1>
+        <p>Selecciona el servicio que buscas:</p>
 
+        <a href="https://upfirst.masteracademy.tech/servicio1" class="link-button">🚀 Servicio de Consultoría</a>
+        <a href="https://upfirst.masteracademy.tech/clase-gratis" class="link-button">🎥 Clase Gratuita: Cómo Empezar</a>
+        
+        <a href="https://masteracademy.tech" class="link-button">🌐 Visitar Web Oficial</a>
+
+        <a href="TU_ENLACE_DE_AFILIADO" class="link-button">🛠️ Herramienta Recomendada</a>
+
+        <hr>
+        <a href="https://wa.me/TUNUMERO" style="color: #25d366; text-decoration: none;">💬 Hablar por WhatsApp</a>
+    </div>
+</body>
+</html>
