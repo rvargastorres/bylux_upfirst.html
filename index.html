@@ -21,23 +21,14 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=358562893670798&ev=PageView&noscript=1"
   /></noscript>
-  <!-- End Meta Pixel Code -->
 
   <style>
     body {font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;}
     .container {max-width:900px; margin:auto; padding:20px; text-align:center;}
     h1 {font-size:2.2em; margin-bottom:10px;}
     h2 {color:#2e7d32;}
-    .btn {
-      display:inline-block; margin:20px 0; padding:15px 25px;
-      background:#2e7d32; color:#fff; text-decoration:none;
-      font-weight:bold; border-radius:8px;
-    }
-    .btn-whatsapp {
-      display:inline-block; margin:10px 0; padding:12px 20px;
-      background:#25D366; color:#fff; text-decoration:none;
-      font-weight:bold; border-radius:8px;
-    }
+    .btn {display:inline-block; margin:20px 0; padding:15px 25px; background:#2e7d32; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px;}
+    .btn-whatsapp {display:inline-block; margin:10px 0; padding:12px 20px; background:#25D366; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px;}
     .section {margin:40px 0;}
     .benefits {text-align:left; max-width:600px; margin:auto;}
     .benefits li {margin:10px 0;}
@@ -45,18 +36,10 @@
     .footer {margin-top:40px; font-size:0.9em; color:#555;}
     .badge {color:#c62828; font-weight:bold; margin-top:10px;}
 
-    .whatsapp-float {
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#25D366;
-      color:#fff;
-      padding:15px;
-      border-radius:50%;
-      font-size:20px;
-      text-decoration:none;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    }
+    .form-box {background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); max-width:500px; margin:auto;}
+    input {width:90%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ccc;}
+
+    .whatsapp-float {position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; font-size:20px; text-decoration:none;}
   </style>
 </head>
 <body>
@@ -67,11 +50,23 @@
   <p>Mientras trabajas... hay personas intentando contactarte ahora mismo.</p>
   <p class="badge">⚠️ Muchos negocios en tu zona ya lo están usando</p>
 
-  <a href="https://upfirst.ai?plid=135012" class="btn" onclick="fbq('track', 'Lead')">PROBAR GRATIS AHORA</a>
+  <a href="https://upfirst.ai?plid=135012" class="btn" onclick="fbq('track','Lead')">PROBAR GRATIS AHORA</a>
 
   <div class="section">
     <h2>Mira cómo funciona en 1 minuto</h2>
     <iframe id="demoVideo" src="https://youtube.com/embed/Qq7GZOlyeW4"></iframe>
+  </div>
+
+  <div class="section">
+    <h2>Guía GRATIS: Cómo no perder clientes</h2>
+    <div class="form-box">
+      <p>Te envío una guía + ejemplo real directamente por WhatsApp</p>
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="email" id="email" placeholder="Tu email" required>
+      <input type="tel" id="telefono" placeholder="Tu WhatsApp" required>
+      <br>
+      <button class="btn" onclick="enviarLead()">Recibir guía GRATIS</button>
+    </div>
   </div>
 
   <div class="section">
@@ -83,55 +78,35 @@
     </ul>
   </div>
 
-  <div class="section">
-    <h2>La solución ya existe</h2>
-    <p>Un sistema que responde por ti automáticamente y convierte contactos en clientes.</p>
-    <ul class="benefits">
-      <li>✔ Atiende llamadas y WhatsApp</li>
-      <li>✔ Disponible 24/7</li>
-      <li>✔ No necesitas conocimientos técnicos</li>
-    </ul>
-  </div>
+  <a href="https://upfirst.ai?plid=135012" class="btn" onclick="fbq('track','Lead')">ACCEDE GRATIS Y PRUÉBALO</a>
 
   <div class="section">
-    <h2>No es teoría</h2>
-    <p>Es lo que ya están usando negocios como el tuyo para ganar más y trabajar menos.</p>
-  </div>
-
-  <a href="https://upfirst.ai?plid=135012" class="btn" onclick="fbq('track', 'Lead')">ACCEDE GRATIS Y PRUÉBALO</a>
-
-  <div class="section">
-    <h2>¿Necesitas ayuda para configurarlo?</h2>
-    <p>Te ayudo personalmente a dejarlo funcionando en tu negocio.</p>
-    <a href="https://wa.me/34651943523" class="btn-whatsapp" onclick="fbq('track', 'Contact')">Te ayudo por WhatsApp</a>
-  </div>
-
-  <div class="footer">
-    Sin compromiso · Sin tarjeta · Fácil de probar
+    <h2>¿Necesitas ayuda?</h2>
+    <a href="https://wa.me/34651943523" class="btn-whatsapp" onclick="fbq('track','Contact')">Te ayudo por WhatsApp</a>
   </div>
 
 </div>
 
-<a href="https://wa.me/34651943523" class="whatsapp-float" onclick="fbq('track', 'Contact')">💬</a>
+<a href="https://wa.me/34651943523" class="whatsapp-float" onclick="fbq('track','Contact')">💬</a>
 
 <script>
-// Track scroll depth (50%)
-let scrollTracked = false;
-window.addEventListener('scroll', function() {
-  const scrolled = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
-  if (!scrollTracked && scrolled > 0.5) {
-    fbq('trackCustom', 'Scroll50');
-    scrollTracked = true;
+function enviarLead(){
+  const nombre = document.getElementById('nombre').value;
+  const email = document.getElementById('email').value;
+  const telefono = document.getElementById('telefono').value;
+
+  if(!nombre || !email || !telefono){
+    alert('Completa todos los campos');
+    return;
   }
-});
 
-// Track time on page (30s)
-setTimeout(function(){ fbq('trackCustom', 'Time30s'); }, 30000);
+  fbq('track','Lead');
 
-// Track video interaction (click to focus as proxy)
-document.getElementById('demoVideo').addEventListener('click', function(){
-  fbq('trackCustom', 'VideoInterest');
-});
+  const mensaje = `Hola, soy ${nombre}. Quiero la guía para no perder clientes. Mi email es ${email}`;
+  const url = `https://wa.me/34651943523?text=${encodeURIComponent(mensaje)}`;
+
+  window.open(url, '_blank');
+}
 </script>
 
 </body>
