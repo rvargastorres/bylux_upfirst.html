@@ -22,73 +22,54 @@
   <style>
     body {font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;}
     .container {max-width:900px; margin:auto; padding:20px; text-align:center;}
-    h1 {font-size:2.2em; margin-bottom:10px;}
+    h1 {font-size:2.4em; margin-bottom:10px;}
     h2 {color:#2e7d32;}
     .btn {display:inline-block; margin:20px 0; padding:15px 25px; background:#2e7d32; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px;}
     .btn-secondary {display:inline-block; margin-top:15px; padding:12px 20px; background:#ff9800; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px;}
     .btn-whatsapp {display:inline-block; margin:10px 0; padding:12px 20px; background:#25D366; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px;}
-    .section {margin:40px 0;}
+    .section {margin:50px 0;}
     iframe {width:100%; max-width:500px; height:280px; border:none; border-radius:10px;}
     .badge {color:#c62828; font-weight:bold;}
+    .subnote {color:#555; font-size:0.95em; margin-top:-10px;}
+
+    .social-proof {background:#fff; padding:20px; border-radius:10px; margin:30px auto; max-width:600px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
 
     .whatsapp-float {position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; font-size:20px; text-decoration:none;}
 
-    .overlay {
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.6);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      z-index:999;
-    }
-
-    .popup {
-      background:rgba(255,255,255,0.95);
-      padding:20px;
-      border-radius:12px;
-      max-width:400px;
-      text-align:center;
-      position:relative;
-    }
-
-    .close-btn {
-      position:absolute;
-      top:10px;
-      right:15px;
-      cursor:pointer;
-      font-size:20px;
-    }
-
+    .overlay {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; z-index:999;}
+    .popup {background:rgba(255,255,255,0.97); padding:20px; border-radius:12px; max-width:400px; text-align:center; position:relative;}
+    .close-btn {position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;}
     input {width:90%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ccc;}
   </style>
 </head>
 <body>
 
-<!-- POPUP -->
 <div class="overlay" id="popup" onclick="cerrarPopupOutside(event)">
   <div class="popup" onclick="event.stopPropagation()">
     <span class="close-btn" onclick="cerrarPopup()">✖</span>
     <h2>🎁 Guía GRATIS</h2>
-    <p>Escribe "GUIA" y te la envío directamente</p>
+    <p>Solo para negocios que quieran mejorar resultados</p>
     <input type="text" id="p_nombre" placeholder="Tu nombre">
     <input type="email" id="p_email" placeholder="Tu email">
     <input type="tel" id="p_tel" placeholder="Tu WhatsApp">
-    <br>
     <button class="btn" onclick="enviarPopup()">Recibir guía</button>
+    <p class="subnote">Sin tarjeta · Prueba real · Solo negocios</p>
   </div>
 </div>
 
 <div class="container">
 
-  <h1>¿Cuántos clientes estás perdiendo sin darte cuenta?</h1>
-  <p>Mientras trabajas... hay personas intentando contactarte ahora mismo.</p>
-  <p class="badge">⚠️ Muchos negocios en tu zona ya lo están usando</p>
+  <h1>¿Cuántos clientes estás perdiendo ahora mismo?</h1>
+  <p>Mientras trabajas… hay personas intentando contactarte.</p>
+  <p class="badge">⚠️ Negocios de tu zona ya lo están solucionando</p>
 
   <a href="https://upfirst.ai?plid=135012" class="btn" onclick="fbq('track','Lead')">PROBAR GRATIS AHORA</a>
+  <p class="subnote">Prueba gratuita · Sin tarjeta · Solo para negocios</p>
+
+  <div class="social-proof">
+    <p><strong>✔ Negocios locales ya están automatizando sus clientes</strong></p>
+    <p>✔ Más tiempo libre · ✔ Más clientes · ✔ Menos estrés</p>
+  </div>
 
   <div class="section">
     <h2>Mira cómo funciona en 1 minuto</h2>
@@ -100,12 +81,19 @@
   </div>
 
   <div class="section">
-    <h2>Además incluimos GRATIS</h2>
+    <h2>Lo que obtienes</h2>
     <ul style="text-align:left; max-width:600px; margin:auto;">
-      <li>📞 Número local para desviar llamadas</li>
-      <li>⚙️ Activar / desactivar automático cuando quieras</li>
-      <li>📊 Control total de tus clientes</li>
+      <li>📞 Número local GRATIS</li>
+      <li>🤖 Respuesta automática 24/7</li>
+      <li>📅 Gestión de clientes automática</li>
+      <li>⚙️ Control manual o automático</li>
     </ul>
+  </div>
+
+  <div class="section">
+    <h2>¿Para quién es esto?</h2>
+    <p>✔ Negocios que reciben llamadas y no pueden atender siempre</p>
+    <p>✔ Personas que quieren crecer sin trabajar más horas</p>
   </div>
 
   <div class="section">
@@ -118,35 +106,17 @@
 <a href="https://wa.me/34651943523" class="whatsapp-float" onclick="fbq('track','Contact')">💬</a>
 
 <script>
-function cerrarPopup(){
-  document.getElementById('popup').style.display = 'none';
-}
-
-function cerrarPopupOutside(e){
-  if(e.target.id === 'popup'){
-    cerrarPopup();
-  }
-}
-
-function mostrarPopup(){
-  document.getElementById('popup').style.display = 'flex';
-}
-
+function cerrarPopup(){ document.getElementById('popup').style.display = 'none'; }
+function cerrarPopupOutside(e){ if(e.target.id === 'popup'){ cerrarPopup(); } }
+function mostrarPopup(){ document.getElementById('popup').style.display = 'flex'; }
 function enviarPopup(){
   const nombre = document.getElementById('p_nombre').value;
   const email = document.getElementById('p_email').value;
   const tel = document.getElementById('p_tel').value;
-
-  if(!nombre || !email || !tel){
-    alert('Completa los datos');
-    return;
-  }
-
+  if(!nombre || !email || !tel){ alert('Completa los datos'); return; }
   fbq('track','Lead');
-
   const mensaje = `Hola, soy ${nombre}. Quiero la GUIA. Email: ${email}`;
   window.open(`https://wa.me/34651943523?text=${encodeURIComponent(mensaje)}`);
-
   cerrarPopup();
 }
 </script>
