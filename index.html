@@ -22,6 +22,8 @@
   <style>
     body {font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;}
     .container {max-width:900px; margin:auto; padding:20px; text-align:center;}
+
+    .content {max-width:700px; margin:auto;}
     h1 {font-size:2.4em; margin-bottom:10px;}
     h2 {color:#2e7d32;}
 
@@ -41,7 +43,7 @@
 
     .btn-whatsapp {display:inline-block; margin:10px 0; padding:12px 20px; background:#25D366; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px;}
 
-    .section {margin:50px 0;}
+    .section {margin:50px 0; text-align:center;}
     iframe {width:100%; max-width:500px; height:280px; border:none; border-radius:10px;}
 
     .badge {color:#c62828; font-weight:bold;}
@@ -50,13 +52,15 @@
     .urgency {
       background:#ffeaea;
       color:#c62828;
-      padding:10px;
+      padding:12px;
       border-radius:8px;
-      margin-top:10px;
+      margin:15px auto;
       font-weight:bold;
+      max-width:600px;
+      text-align:center;
     }
 
-    .social-proof {background:#fff; padding:20px; border-radius:10px; margin:30px auto; max-width:600px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+    .social-proof {background:#fff; padding:20px; border-radius:10px; margin:30px auto; max-width:600px; box-shadow:0 2px 10px rgba(0,0,0,0.1); text-align:center;}
 
     .whatsapp-float {
       position:fixed;
@@ -108,7 +112,21 @@
     .popup {background:rgba(255,255,255,0.97); padding:20px; border-radius:12px; max-width:400px; text-align:center; position:relative;}
     .close-btn {position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;}
     input {width:90%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ccc;}
-  </style>
+  .list-centered {
+      list-style: none;
+      padding: 0;
+      margin: 20px auto;
+      max-width:600px;
+      text-align:center;
+    }
+
+    .list-centered li {
+      margin:10px 0;
+    }
+
+    p {text-align:center;}
+
+</style>
 </head>
 <body>
 
@@ -126,6 +144,7 @@
 </div>
 
 <div class="container">
+  <div class="content">
 
   <h1>¿Cuántos clientes estás perdiendo ahora mismo?</h1>
   <p>Mientras trabajas… hay personas intentando contactarte.</p>
@@ -138,11 +157,6 @@
   <a href="https://upfirst.ai?plid=135012" class="btn" onclick="fbq('track','Lead')">PROBAR GRATIS AHORA</a>
   <p class="subnote">Prueba gratuita · Sin tarjeta · Solo para negocios</p>
 
-  <div class="social-proof">
-    <p><strong>✔ Negocios locales ya están automatizando sus clientes</strong></p>
-    <p>✔ Más tiempo libre · ✔ Más clientes · ✔ Menos estrés</p>
-  </div>
-
   <div class="section">
     <h2>Mira cómo funciona en 1 minuto</h2>
     <iframe src="https://youtube.com/embed/Qq7GZOlyeW4"></iframe>
@@ -152,9 +166,16 @@
     </a>
   </div>
 
+  <div class="social-proof">
+    <p><strong>✔ Negocios locales ya están automatizando sus clientes</strong></p>
+    <p>✔ Más tiempo libre · ✔ Más clientes · ✔ Menos estrés</p>
+  </div>
+
+  
+
   <div class="section">
     <h2>Lo que obtienes</h2>
-    <ul style="text-align:left; max-width:600px; margin:auto;">
+    <ul class="list-centered">
       <li>📞 Número local GRATIS</li>
       <li>🤖 Respuesta automática 24/7</li>
       <li>📅 Gestión de clientes automática</li>
@@ -173,6 +194,7 @@
     <a href="https://wa.me/34651943523" class="btn-whatsapp" onclick="fbq('track','Contact')">Te ayudo por WhatsApp</a>
   </div>
 
+</div>
 </div>
 
 <a href="https://wa.me/34651943523" class="whatsapp-float" onclick="fbq('track','Contact')">
